@@ -7,7 +7,8 @@
     "start": "reveal-md slides.md --theme theme/qt-dark.css",
     "start-dark": "reveal-md slides.md --theme theme/qt-dark.css",
     "start-light": "reveal-md slides.md --theme theme/qt-light.css",
-    "go": "(killall -9 node) && npm start"
+    "pdf": "(killall -9 node || echo 'Process was not running.') && reveal-md slides.md --theme theme/qt-light.css --print slides.pdf",
+    "dev": "(killall -9 node || echo 'Process was not running.') && reveal-md slides.md -w --theme theme/qt-dark.css"
   },
   "repository": {
     "type": "git",

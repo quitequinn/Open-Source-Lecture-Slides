@@ -12,7 +12,7 @@ npm install
 ## Usage
 
 ```bash
-npm start
+npm run dev
 ```
 
 This starts a local server and opens any Markdown file as a reveal.js presentation in the default browser.

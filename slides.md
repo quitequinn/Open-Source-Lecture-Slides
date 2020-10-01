@@ -1,7 +1,4 @@
-# Title
-
-* Point 3
-* Point 2
+# Just you first slide
 
 ---
 
