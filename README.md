@@ -1,6 +1,7 @@
 # Open Source Lecture Slides
 
 This is basically a repo to organize my thoughts on how best to create lecture notes that are opensource and improvable by the community.
+A large range of topics can be found on https://slides.com/.
 
 ## Installation
 
