@@ -4,11 +4,10 @@
   "description": "",
   "main": "reveal-md path/to/my/slides.md",
   "scripts": {
-    "start": "reveal-md slides.md --theme theme/qt-dark.css",
-    "start-dark": "reveal-md slides.md --theme theme/qt-dark.css",
-    "start-light": "reveal-md slides.md --theme theme/qt-light.css",
-    "pdf": "(killall -9 node || echo 'Process was not running.') && reveal-md slides.md --theme theme/qt-light.css --print slides.pdf",
-    "dev": "(killall -9 node || echo 'Process was not running.') && reveal-md slides.md -w --theme theme/qt-dark.css"
+    "start": "reveal-md . --theme ../assets/theme/qt-dark.css --listing-template listing.html --scripts assets/js/script.js",
+    "dev": "(killall -9 node || echo 'Process was not running.') && reveal-md . -w --theme ../assets/theme/qt-dark.css --listing-template listing.html --scripts assets/js/script.js",
+    "pdf": "(killall -9 node || echo 'Process was not running.') && reveal-md \"${FILE:slide}.md\" --theme ../assets/theme/qt-dark.css --listing-template listing.html --scripts assets/js/script.js --print \"pdf/${FILE:slide}.pdf\"",
+    "build": "reveal-md . --theme ../assets/theme/qt-dark.css --listing-template listing.html --scripts assets/js/script.js --static --static-dirs=assets"
   },
   "repository": {
     "type": "git",
@@ -21,6 +20,9 @@
   },
   "homepage": "https://github.com/quitequinn/Open-Source-Lecture-Slides#readme",
   "dependencies": {
-    "reveal-md": "^3.4.7"
+    "reveal-md": "^3.5.0"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
   }
 }
