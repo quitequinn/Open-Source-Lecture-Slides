@@ -103,6 +103,7 @@ a[href^="_static"], a[href^="README"], a[href^="readme"], a[href^="slide.html"],
 [data-type="listing-1"]{
   display: flex;
   flex-wrap: wrap;
+  align-content: center;
 }
 [data-type="listing-1"] br{
   display: none;
