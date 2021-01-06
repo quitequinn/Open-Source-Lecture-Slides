@@ -29,7 +29,7 @@ section.has-light-background h6 {
  *********************************************/
 
 a[href^="_static"], a[href^="README"], a[href^="readme"], a[href^="slide.html"], a[href^="slide.md"] {
-  display: none;
+  display: none!important;
 }
 
 
