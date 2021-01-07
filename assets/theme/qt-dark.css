@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap'); */
+
 :root{
-  --primary: #0074d9;
-  --secondary: rgb(254, 1, 57);
-  --background: rgba(10, 5, 5, 0.90);
+  --primary: rgb(0,116,217);
+  --secondary: rgb(254,1,57);
+  --background: rgb(17, 0,22);
 }
 
 /**
@@ -9,9 +13,6 @@
  *
  * By Hakim El Hattab, http://hakim.se
  */
-
-@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
 
 section.has-light-background,
@@ -53,7 +54,7 @@ a[href^="_static"], a[href^="README"], a[href^="readme"], a[href^="slide.html"],
   padding: 15px 15px 10px 20px;
   height: 35px;
   width: 35px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(17,20,22,0.5);
   cursor: pointer;
   border-top-left-radius: 5px;
   transition: opacity ease 0.25s;
@@ -247,12 +248,30 @@ p{
 }
 
 .reveal h1{
-  font-family: "Merriweather", serif;
+  font-family: "Merriweather Sans", Helvetica, sans-serif;
   text-transform: none;
-  font-size: 2em;
+  font-size: 3em;
   font-weight: 900;
-  color: var(--secondary);
-
+  color: white;
+  text-shadow: 0 0 50px rgba(17, 20, 22, 0.25)!important;
+}
+html:before{
+  opacity: 0;
+  content:"";
+  display: block;
+  position: fixed;
+  width: 200vw;
+  height: 200vw;
+  left: -125vw;
+  top: -125vw;
+  background: var(--primary);
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.25s;
+}
+html[slide="1"]:before{
+  opacity: 1;
+  transition: all 0.25s;
 }
 .reveal h2{
   opacity: 0.25;
@@ -261,7 +280,7 @@ p{
   letter-spacing: 0.05em;
 }
 .reveal h3{
-  font-family: "Merriweather", serif;
+  font-family: "Merriweather Sans", Helvetica, sans-serif;
   color: var(--secondary);
   text-transform: none;
   font-size: 1.5em;
@@ -298,7 +317,7 @@ p{
  *********************************************/
 .reveal p {
   margin: 20px 0;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 /* Ensure certain elements are never larger than the slide itself */
@@ -311,7 +330,10 @@ p{
 
 .reveal strong,
 .reveal b {
-  font-weight: bold;
+  background: var(--primary);
+  padding: 0.1em 0.25em;
+  font-weight: 400;;
+  /* color: var(--background); */
 }
 
 .reveal em {
@@ -513,7 +535,43 @@ p{
  * NAVIGATION CONTROLS
  *********************************************/
 .reveal .controls {
-  color: var(--primary);
+  color: black;
+  z-index: 99;
+  /* width: 100px; 
+  height: 100px; */
+  pointer-events: initial;
+}
+.reveal .controls:before {
+  content: "";
+  width: 150px;
+  height: 150px;
+  display: block;
+  position: absolute;
+  bottom: -80px;
+  right: -55px;
+  background: rgba(255,255,255,0.2);
+  transition: all 0.2s;
+  border-radius: 50%;
+}
+.reveal .controls:hover:before {
+  background: rgba(255,255,255,0.3);
+  transition: all 0.2s;
+}
+.reveal .progress{
+  color: rgba(255,255,255,0.5)!important;
+}
+.reveal[data-navigation-mode="linear"].has-horizontal-slides .navigate-left, .reveal:not(.has-vertical-slides) .controls .navigate-left{
+  bottom: 0;
+  right: 2.5em;
+}
+.reveal[data-navigation-mode="linear"].has-horizontal-slides .navigate-right, .reveal:not(.has-vertical-slides) .controls .navigate-right{
+  bottom: 0;
+  right: 0;
+}
+.reveal .controls .controls-arrow:before, .reveal .controls .controls-arrow:after{
+  border-radius: 0;
+  width: 2em;
+  height: 0.5em;
 }
 
 /*********************************************
