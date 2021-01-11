@@ -6,6 +6,9 @@ cache:
   - node_modules
 script:
   - npm run build
+  - touch _static/.nojekyll
+  - mv favicon.ico _static/favicon.ico
+
 deploy:
   provider: pages
   local_dir: _static

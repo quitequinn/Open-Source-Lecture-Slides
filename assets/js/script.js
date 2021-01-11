@@ -23,6 +23,9 @@ window.addEventListener('load', function() {
    document.querySelectorAll(".controls")[0].addEventListener("click", function(){
       setTimeout(function(){ checkSlide(); }, 10);
    });
+   document.querySelectorAll(".controls")[0].addEventListener("touchstart", function(){
+      setTimeout(function(){ checkSlide(); }, 10);
+   });
    window.addEventListener("keydown", function(){
       setTimeout(function(){ checkSlide(); }, 10);
    });

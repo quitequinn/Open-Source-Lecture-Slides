@@ -78,7 +78,7 @@ a[href^="_static"], a[href^="README"], a[href^="readme"], a[href^="slide.html"],
   font-family: "Merriweather Sans", Helvetica, sans-serif;
   font-size: 20px;
   text-decoration: none;
-  padding: 0.5rem 0 0.5rem 2.5vw;
+  padding: 1rem 0 1rem 2.5vw;
   width: 100%;
   white-space: nowrap;
   display: block;
@@ -146,7 +146,7 @@ a[href^="_static"], a[href^="README"], a[href^="readme"], a[href^="slide.html"],
 [data-type="listing-1"] a:hover:after{
   background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
 }
-@media (min-width: 500px){
+@media (min-width: 450px){
   [data-type="listing-1"] a{
     height:  calc(50vw - 5vw);
     width:  calc(50vw - 5vw);
