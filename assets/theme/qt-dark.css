@@ -1,0 +1,607 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap'); */
+
+:root{
+  --primary: rgb(0,116,217);
+  --secondary: rgb(254,1,57);
+  --background: rgb(17, 0,22);
+}
+
+/**
+ * Black theme for reveal.js. This is the opposite of the 'white' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+
+
+section.has-light-background,
+section.has-light-background h1,
+section.has-light-background h2,
+section.has-light-background h3,
+section.has-light-background h4,
+section.has-light-background h5,
+section.has-light-background h6 {
+  color: #222;
+}
+
+/*********************************************
+ * REVEAL FIXES
+ *********************************************/
+
+a[href^="_static"], a[href^="README"], a[href^="readme"], a[href^="slide.html"], a[href^="slide.md"] {
+  display: none!important;
+}
+
+
+/*********************************************
+ * LISTING STYLES
+ *********************************************/
+
+.fa.listing-type-1{
+  display: initial;
+}
+[data-type="listing-2"] .fa.listing-type-2{
+  display: initial;
+}
+.listing-toggle{
+  opacity: 0.5;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 35px;
+  padding: 15px 15px 10px 20px;
+  height: 35px;
+  width: 35px;
+  background: rgba(17,20,22,0.5);
+  cursor: pointer;
+  border-top-left-radius: 5px;
+  transition: opacity ease 0.25s;
+  z-index: 9;
+}
+.listing-toggle:hover{
+  opacity: 1;
+  transition: opacity ease 0.25s;
+}
+
+.listing{
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  background: black;
+  transform: all ease 1s;
+  min-height: 100vh;
+}
+.listing a{
+  color: white;
+  font-family: "Merriweather Sans", Helvetica, sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 1rem 0 1rem 2.5vw;
+  width: 100%;
+  white-space: nowrap;
+  display: block;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+.listing a:nth-of-type(even){
+  background: rgba(255,255,255,0.1);
+}
+.listing a:hover{
+  background: rgba(255,255,255,0.25);
+}
+.listing br{
+  display: none;
+}
+
+[data-type="listing-2"] .fa-list{
+  display:none;
+}
+[data-type="listing-1"] .fa-th{
+  display:none;
+}
+[data-type="listing-1"]{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+[data-type="listing-1"] br{
+  display: none;
+}
+[data-type="listing-1"] a{
+  position: relative;
+  height:  calc(100vw - 10vw);
+  width:  calc(100vw - 10vw);
+  display: inline-block;
+  margin: 5vw;
+  padding: 0;
+  font-size: 0;
+  padding: 2.5vw;
+  background: rgba(255,255,255,0.1);
+}
+[data-type="listing-1"] a:before{
+  font-size: 20px;
+  content: attr(href);
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 100%;
+  display: block;
+  white-space: normal;
+}
+[data-type="listing-1"] a:after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0; 
+  height: 0; 
+  width: 15vw;
+  height: 15vw;
+  background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.5) 100%);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+}
+[data-type="listing-1"] a:hover:after{
+  background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+}
+@media (min-width: 450px){
+  [data-type="listing-1"] a{
+    height:  calc(50vw - 5vw);
+    width:  calc(50vw - 5vw);
+    margin: 2.5vw;
+  }
+  [data-type="listing-1"] a:after{
+    width: 10vw;
+    height: 10vw;
+  }
+}
+@media (min-width: 900px){
+  [data-type="listing-1"] a{
+    height: calc(33.3333vw - 5vw);
+    width: calc(33.3333vw - 5vw);
+    margin: 2.5vw;
+  }
+  [data-type="listing-1"] a:after{
+    width: 5vw;
+    height: 5vw;
+  }
+}
+@media (min-width: 1100px){
+  [data-type="listing-1"] a{
+    height: calc(25vw - 5vw);
+    width: calc(25vw - 5vw);
+    margin: 2.5vw;
+  }
+  [data-type="listing-1"] a:after{
+    width: 3vw;
+    height: 3vw;
+  }
+}
+@media (min-width: 1400px){
+  [data-type="listing-1"] a{
+    height: calc(20vw - 5vw);
+    width: calc(20vw - 5vw);
+    margin: 2.5vw;
+  }
+  [data-type="listing-1"] a:after{
+    width: 2vw;
+    height: 2vw;
+  }
+}
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+body {
+  background: var(--background);
+  background-color: var(--background);
+  font-family: "Merriweather", serif;
+}
+p{
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+}
+.reveal {
+  font-size: 42px;
+  font-weight: 300;
+  color: #fff;
+}
+
+::selection {
+  color: #fff;
+  background: #bee4fd;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #bee4fd;
+  text-shadow: none;
+}
+
+.reveal .slides section,
+.reveal .slides section > section {
+  line-height: 1.3;
+  font-weight: inherit;
+}
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #fff;
+  font-family: "Merriweather Sans", Helvetica, sans-serif;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  text-shadow: none;
+  word-wrap: break-word;
+}
+
+.reveal h1{
+  font-family: "Merriweather Sans", Helvetica, sans-serif;
+  text-transform: none;
+  font-size: 3em;
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 0 50px rgba(17, 20, 22, 0.25)!important;
+}
+html:before{
+  opacity: 0;
+  content:"";
+  display: block;
+  position: fixed;
+  width: 200vw;
+  height: 200vw;
+  left: -125vw;
+  top: -125vw;
+  background: var(--primary);
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.25s;
+}
+html[slide="1"]:before{
+  opacity: 1;
+  transition: all 0.25s;
+}
+.reveal h2{
+  opacity: 0.25;
+  font-size: 0.75em;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+.reveal h3{
+  font-family: "Merriweather Sans", Helvetica, sans-serif;
+  color: var(--secondary);
+  text-transform: none;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+.reveal h4{
+  text-transform: none;
+  font-size: 1em;
+}
+.reveal h5{
+  text-transform: none;
+  font-size: 0.75em;
+}
+.reveal h6{
+  font-size: 0.25em;
+}
+.reveal p{
+  opacity: 1;
+  font-size: 1em;
+  max-width: 80%;
+  margin-right: auto!important;
+  margin-left: auto!important;
+}
+.reveal ul, .reveal ol{
+  opacity: 0.5;
+  font-size: 0.75em;
+}
+.reveal h1 {
+  text-shadow: none;
+}
+
+/*********************************************
+ * OTHER
+ *********************************************/
+.reveal p {
+  margin: 20px 0;
+  line-height: 1.4;
+}
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 95%;
+  max-height: 95%;
+}
+
+.reveal strong,
+.reveal b {
+  background: var(--primary);
+  padding: 0.1em 0.25em;
+  font-weight: 400;;
+  /* color: var(--background); */
+}
+
+.reveal em {
+  font-style: italic;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em;
+}
+
+.reveal ol {
+  list-style-type: decimal;
+}
+
+.reveal ul {
+  list-style-type: disc;
+}
+
+.reveal ul ul {
+  list-style-type: square;
+}
+
+.reveal ul ul ul {
+  list-style-type: circle;
+}
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px;
+}
+
+.reveal dt {
+  font-weight: bold;
+}
+
+.reveal dd {
+  margin-left: 40px;
+}
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: 20px auto;
+  padding: 5px;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block;
+}
+
+.reveal q {
+  font-style: italic;
+}
+
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: 20px auto;
+  text-align: left;
+  font-size: 0.55em;
+  font-family: monospace;
+  line-height: 1.2em;
+  word-wrap: break-word;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.reveal code {
+  font-family: monospace;
+  text-transform: none;
+}
+
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  max-height: 400px;
+  word-wrap: normal;
+}
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.reveal table th {
+  font-weight: bold;
+}
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  font-size: 0.3em;
+  text-align: center;
+}
+
+.reveal table th[align="center"],
+.reveal table td[align="center"] {
+  text-align: center;
+}
+
+.reveal table th[align="right"],
+.reveal table td[align="right"] {
+  text-align: right;
+}
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.reveal sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+.reveal sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top;
+}
+
+.reveal small * {
+  vertical-align: top;
+}
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+  color: var(--primary);
+  opacity: 1;
+  text-decoration: none;
+  -webkit-transition: color 0.15s ease;
+  -moz-transition: color 0.15s ease;
+  transition: color 0.15s ease;
+}
+
+.reveal a:hover {
+  opacity: 0.75;
+  text-shadow: none;
+  border: none;
+}
+
+.reveal .roll span:after {
+  color: #fff;
+  background: var(--primary);
+}
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+.reveal section img {
+  margin: 15px 0px;
+  width: 100%;
+  /* background: rgba(255, 255, 255, 0.12); */
+  /* border: 4px solid #fff; */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); */
+}
+
+.reveal section img.plain {
+  border: 0;
+  box-shadow: none;
+}
+
+.reveal a img {
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--primary);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls {
+  color: black;
+  z-index: 99;
+  /* width: 100px; 
+  height: 100px; */
+  pointer-events: initial;
+}
+.reveal .controls:before {
+  content: "";
+  width: 150px;
+  height: 150px;
+  display: block;
+  position: absolute;
+  bottom: -80px;
+  right: -55px;
+  background: rgba(255,255,255,0.2);
+  transition: all 0.2s;
+  border-radius: 50%;
+}
+.reveal .controls:hover:before {
+  background: rgba(255,255,255,0.3);
+  transition: all 0.2s;
+}
+.reveal .progress{
+  color: rgba(255,255,255,0.5)!important;
+}
+.reveal[data-navigation-mode="linear"].has-horizontal-slides .navigate-left, .reveal:not(.has-vertical-slides) .controls .navigate-left{
+  bottom: 0;
+  right: 2.5em;
+}
+.reveal[data-navigation-mode="linear"].has-horizontal-slides .navigate-right, .reveal:not(.has-vertical-slides) .controls .navigate-right{
+  bottom: 0;
+  right: 0;
+}
+.reveal .controls .controls-arrow:before, .reveal .controls .controls-arrow:after{
+  border-radius: 0;
+  width: 2em;
+  height: 0.5em;
+}
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--primary);
+}
+
+.reveal .progress span {
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}
+
+/*********************************************
+ * PRINT BACKGROUND
+ *********************************************/
+@media print {
+  .backgrounds {
+    background-color: var(--background);
+  }
+}
+
+
+/*********************************************
+ * MISC
+ *********************************************/
+
+.contained * {
+   background-size: contain!important;
+}

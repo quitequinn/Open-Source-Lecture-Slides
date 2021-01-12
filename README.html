@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>reveal-md</title>
+    <link rel="stylesheet" href="./css/reveal.css" />
+    <link rel="stylesheet" href="_assets/../assets/theme/qt-dark.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/zenburn.css" />
+    <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print" />
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"># Design for Startups
+
+[![Build Status](https://travis-ci.com/quitequinn/YOUR_REPO_NAME.svg?branch=master)](https://travis-ci.com/quitequinn/YOUR_REPO_NAME) 
+
+[See slides on Github pages.](https://quitequinn.github.io/YOUR_REPO_NAME/)
+
+This is a repo for this class's lectures.
+
+
+## Installation
+
+```bash
+npm install
+```
+
+
+## Usage
+
+```bash
+npm run dev # Starts a local server and opens any Markdown file as a reveal.js presentation in the default browser. (for dev)
+
+npm run start # Starts it. (for production)
+
+FILE='YOUR_FILE' npm run pdf # Generates PDFs
+npm run static # Generate static files
+```
+
+
+
+## Software
+
+Otherwise, I'm basically just using [reveal-md](https://github.com/webpro/reveal-md) so check it out if you have questions. 
+
+
+
+## Github Pages
+
+To setup Github pages all you have to do is copy your Githup PAT to your authorized Travis CI account.
+
+</script></section></div>
+    </div>
+
+    <script src="./js/reveal.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // Optional libraries used to extend on reveal.js
+      var deps = [
+        { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: './plugin/zoom-js/zoom.js', async: true },
+        { src: './plugin/notes/notes.js', async: true },
+        { src: './plugin/math/math.js', async: true }
+      ];
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        dependencies: deps
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal.getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":true,"progress":true,"transition":"none"}, queryOptions);
+    </script>
+
+    <script src="./_assets/assets/js/script.js"></script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
